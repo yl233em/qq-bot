@@ -1,14 +1,11 @@
 account:
   uin: 0
-  password: ''
+  password: ""
   encrypt: false
-
   login_protocol: 2
   protocol: 2
-
   auto_login: true
   use_sso_address: true
-
   data_dir: ./data
 
 servers:
@@ -17,8 +14,8 @@ servers:
       port: 5700
       post:
         - url: http://nonebot:8080/
-      access_token: ''
-      secret: ''
+      access_token: ""
+      secret: ""
     ws:
       host: 0.0.0.0
       port: 6700

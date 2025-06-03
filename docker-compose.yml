@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  go-cqhttp:
+    image: ghcr.io/mrs4s/go-cqhttp:latest
+    container_name: go-cqhttp
+    restart: always
+    volumes:
+      - ./go-cqhttp/config.yml:/app/config.yml
+      - ./go-cqhttp/data:/app/data
+    ports:
+      - "5700:5700"
+    networks:
+      - qqbot-net
+
+  nonebot:
+    build: ./nonebot
+    container_name: nonebot
+    restart: always
+    volumes:
+      - ./nonebot:/app
+    depends_on:
+      - go-cqhttp
+    networks:
+      - qqbot-net
+    ports:
+      - "8080:8080"
+
+networks:
+  qqbot-net:
+    driver: bridge

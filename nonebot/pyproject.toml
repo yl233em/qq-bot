@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "qq-bot"
+version = "0.1.0"
+description = "QQ Bot based on nonebot2"
+authors = ["YourName <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+nonebot2 = "^2.0.0b5"
+httpx = "^0.24.1"
+apscheduler = "^3.9.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
